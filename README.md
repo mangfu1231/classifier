@@ -12,7 +12,7 @@ $command = escapeshellcmd('./classifier.py');
 $output = shell_exec($command);
 echo $output;
 ```
-- classifier.py
+- classifier.py  
 This is the main script for training classifier model. We connected mySQL databse, read dataset into pandas dataframe, seperate them by drop method as label and features. And we divided the dataset into training and testing datasets. Sklearn module was applied to train and eveluate the classifier. We also save the trained model as a file for future use.
 ```python
 mydb = mysql.connector.connect(
@@ -47,7 +47,7 @@ nbMovie2_file = "nbMovie2.sav"
 pickle.dump(nbClassifier, open(nbMovie2_file, 'wb'))
 print ("Model successfully trained, saved as file 'nbMovie2.sav' in root directory")
 ```
-- classifier.html
+- classifier.html  
 The script is nothing more than a basic user interface for input.
 ```html
   <form class="search" action="classifier.php" method="get" style="margin:auto;max-width:300px">
@@ -56,7 +56,7 @@ The script is nothing more than a basic user interface for input.
     <button type="submit" name="search">Submit</button>
   </form>
 ```
-- classifier.php
+- classifier.php  
 The php will handle user input and call another python script to run trained classifier.
 ```php
 $input = array($_GET["budget"], $_GET["revenue"]);
@@ -64,7 +64,7 @@ $command = escapeshellcmd('./nbMovie2.py ' . $_GET["budget"] . ' ' . $_GET["reve
 $output = shell_exec($command);
 echo $output;
 ```
-- nbMovie2.py
+- nbMovie2.py  
 The script run the trained classifier (nbMovie2.sav), pass user input to the classifier and return genre result according to the two numbers given by user.
 ```python
 loaded_clf = pickle.load(open("nbMovie2.sav", 'rb'))
