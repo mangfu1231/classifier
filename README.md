@@ -1,10 +1,10 @@
-# classifier
+# Classifier
 A Naive Bayes Classifier for movie genre based on budget and revenue.
 
 ## Overview
 Movie genre is relavant to budget and revenue. Given these two numbers, we sometimes are able to make reasonable inference for the genre of a movie. Influenced by this matter of fact, we developed a classifier based on budget and revenue. The classifier consists of five separate scripts. Two of them are for the purpose of training. The other three is for classifying by user given budget and revenue.
 
-## Script in detail
+## Scripts in detail
 - train.php
 Since this app is depended on LAMP, runing python directly on Apache is not a good choice. Train.php calls the python script to run which is similiar to run python through bash.
 ```php
@@ -60,7 +60,6 @@ The script is nothing more than a basic user interface for input.
 The php will handle user input and call another python script to run trained classifier.
 ```php
 $input = array($_GET["budget"], $_GET["revenue"]);
-//Execute python script
 $command = escapeshellcmd('./nbMovie2.py ' . $_GET["budget"] . ' ' . $_GET["revenue"]);
 $output = shell_exec($command);
 echo $output;
@@ -76,3 +75,5 @@ y_pred = loaded_clf.predict([[int(param_1), int(param_2)]])
 print ('The Genre is ')
 print (''.join(y_pred))
 ```
+## Methodology on blog
+https://chaoweiwang6.wixsite.com/website/post/how-to-create-synergy-in-the-workplace
