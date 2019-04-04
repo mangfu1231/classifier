@@ -2,7 +2,7 @@
 A Naive Bayes Classifier for movie genre based on budget and revenue.
 
 ## Overview
-Movie genre is relavant to budget and revenue. Given these two numbers, we sometimes are able to make reasonable inference for the genre of a movie. Influenced by this matter of fact, we developed a classifier based on budget and revenue. The classifier consists of five separate scripts. Two of them are for the purpose of training. The other three is for classifying by user given budget and revenue.
+Movie genre is relavant to budget and revenue. Given these two numbers, we sometimes are able to make reasonable inference for the genre of a movie. Influenced by this fact, we developed a classifier based on budget and revenue. The classifier consists of five separate scripts. Two of them are for the purpose of training. The other three is for classifying by user given budget and revenue.
 
 ## Scripts in detail
 - train.php  
