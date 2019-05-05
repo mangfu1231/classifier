@@ -65,15 +65,27 @@ $output = shell_exec($command);
 echo $output;
 ```
 - nbMovie2.py  
-The script run the trained classifier (nbMovie2.sav), pass user input to the classifier and return genre result according to the two numbers given by user.
+The script run the trained classifier (nbMovie2.sav), pass user input to the classifier and return genre result according to the two numbers given by user. Also it outputs the highest probability value.
 ```python
+import pickle
 loaded_clf = pickle.load(open("nbMovie2.sav", 'rb'))
+
 import sys
-param_1= sys.argv[1]
-param_2= sys.argv[2]
-y_pred = loaded_clf.predict([[int(param_1), int(param_2)]])
+param_1 = sys.argv[1]
+param_2 = sys.argv[2]
+user_input = [[int(param_1), int(param_2)]]
+
+y_pred = loaded_clf.predict(user_input)
+
+prob = loaded_clf.predict_proba(user_input)
+prob.sort()
+
 print ('The Genre is ')
 print (''.join(y_pred))
+
+print ('. The probability for this genre is ')
+print (prob[0][18])
+print ('.')
 ```
 ## Methodology on blog
 https://chaoweiwang6.wixsite.com/website/post/how-to-create-synergy-in-the-workplace
