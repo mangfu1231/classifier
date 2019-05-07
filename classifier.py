@@ -6,9 +6,9 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  passwd="",
-  database="chaoweiw_search"
+  user="username",
+  passwd="password",
+  database="table"
 )
 
 #Convert SQL to Pandas Data structure

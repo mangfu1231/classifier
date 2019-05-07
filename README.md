@@ -17,9 +17,9 @@ This is the main script for training classifier model. We connected mySQL databs
 ```python
 mydb = mysql.connector.connect(
   host="localhost",
-  user="root",
-  passwd="",
-  database="chaoweiw_search"
+  user="username",
+  passwd="password",
+  database="table"
 )
 ```
 ```python
