@@ -88,4 +88,4 @@ print (prob[0][18])
 print ('.')
 ```
 ## Methodology on blog
-https://chaoweiwang6.wixsite.com/website/post/how-to-create-synergy-in-the-workplace
+https://cwang.netlify.com/post/movie_genre_classifier/
